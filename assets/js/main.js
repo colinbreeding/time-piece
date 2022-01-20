@@ -46,3 +46,41 @@ let testimonialSwiper = new Swiper(".testimonial-swiper", {
       prevEl: ".swiper-button-prev",
     },
 });
+
+// New Swiper
+let newSwiper = new Swiper(".new-swiper", {
+    spaceBetween: 24,
+    loop: 'true',
+
+    breakpoints: {
+        576: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+    },
+});
+
+// Scroll Sections Active Link
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 58,
+              sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
