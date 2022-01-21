@@ -154,3 +154,11 @@ sr.reveal(`.home__container, .newsletter, .featured__container, .products__conta
     origin: 'top',
     interval: 100,
 })
+sr.reveal(`.story__data, .testimonial__images`,{
+    origin: 'right',
+    interval: 100,
+})
+sr.reveal(`.story__images, .testimonial-swiper`,{
+    origin: 'left',
+    interval: 100,
+})
