@@ -150,11 +150,7 @@ const sr = ScrollReveal({
     reset: true,
 })
 
-sr.reveal(`.home__container, .newsletter`,{
+sr.reveal(`.home__container, .newsletter, .featured__container, .products__container, .new__container`,{
     origin: 'top',
     interval: 100,
-})
-
-sr.reveal(`.featured__container, .products__container, .new__container`,{
-    origin: 'left',
 })
