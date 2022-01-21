@@ -92,3 +92,24 @@ function scrollUp(){
     if(this.scrollY >= 400) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
+
+// Show Cart
+const cart = document.getElementById('cart'),
+      cartShop = document.getElementById('cart-shop'),
+      cartClose = document.getElementById('cart-close')
+
+// Cart Show
+/* Validate if constant exists */
+if(cartShop){
+    cartShop.addEventListener('click', () =>{
+        cart.classList.add('show-cart')
+    })
+}
+
+// Cart Hidden
+/* Validate if constant exists */
+if(cartClose){
+    cartClose.addEventListener('click', () =>{
+        cart.classList.remove('show-cart')
+    })
+}
